@@ -1,0 +1,35 @@
+_______first-question____________
+class Solution:
+    def commonFactors(self, a: int, b: int) -> int:
+        count=0
+        if(a>b):
+            for i in range(1,b+1):
+                if(a%i==0 and b%i==0):
+                     count+=1
+               
+        else:
+            for i in range(1,a+1):
+                if(a%i==0 and b%i==0):
+                    count+=1
+        print(count)
+        return count
+________________second-question__________________
+class Solution:
+    def findGCD(self, nums: List[int]) -> int:
+        lowest=nums[0]
+        highest=nums[0]
+        for i in nums:
+            if(i<lowest):
+                lowest=i
+            if(i>highest):
+                highest=i
+            large=1
+            for j in range(1,lowest+1):
+                if(highest%j==0 and lowest%j==0):
+                    large=j
+        return large                          
+_______________3rd_question_________________________
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+       
+       return address.replace('.','[.]')
